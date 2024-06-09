@@ -53,6 +53,10 @@ app.get("/search/collection/lessons/", (req, res) => {
     var order = req.query.order == "desc" ? -1 : 1;
 
     if (search) {
+      console.log('Search query: ', search)
+    }
+
+    if (search) {
       search = {
         $or: [
           { title: { $regex: search, $options: "i" } },
